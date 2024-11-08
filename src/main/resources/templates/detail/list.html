@@ -18,13 +18,13 @@
             </div>
         </form>
         <br>
-        <div class="row">
-            <div th:each="product : ${listaComidas}" class="col-md-4 mb-4">
-                <div class="card">
-                    <img th:src="${product.strCategoryThumb}" class="card-img-top" alt="Imagen de categoría">
+        <div class="row d-flex flex-wrap">
+            <div th:each="product : ${listaComidas}" class="col-md-4 mb-4 d-flex">
+                <div class="card flex-grow-1">
                     <div class="card-body">
-                        <h5 class="card-title" th:text="${product.strCategory}"></h5>
-                        <p class="card-text" th:text="${product.strCategoryDescription}"></p>
+                        <h5 class="card-title" text align="center" th:text="${product.strMeal}"></h5>
+                        <img th:src="${product.strMealThumb}" class="card-img-top" alt="Imagen de categoría">
+                        <p class="card-text" th:text="${product.strCategory}"></p>
                         <!-- No es necesario
                         <a class="btn btn-primary" th:href="@{'/meal/edit' + '?id=' + ${product.idCategory}}">Editar</a>
                         <a class="btn btn-danger" th:href="@{'/meal/delete' + '?id=' + ${product.idCategory}}">Borrar</a>

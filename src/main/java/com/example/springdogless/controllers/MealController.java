@@ -9,21 +9,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping(value = "/meal")
+@RequestMapping({ "", "/"})
 public class MealController {
 
     @Autowired
     MealDao mealDao;
 
-    @GetMapping({"/list", "", "/"})
+    @GetMapping({"/meal", "", "/"})
     public String listaComidas(Model model) {
         model.addAttribute("listaComidas", mealDao.listarComidas());
-        return "meal/list";
+        return "category/list";
     }
 
     @GetMapping("/buscar")
     public String buscarComidas(@RequestParam("query") String nombre, Model model) {
         model.addAttribute("listaComidas", mealDao.buscarComidaPorNombre(nombre));
         return "meal/list";
+    }
+
+    @GetMapping({"/detail"})
+    public String listaDetail(Model model) {
+        model.addAttribute("listaComidas", mealDao.listarDetail());
+        return "detail/list";
+    }
+
+    @GetMapping("/buscarDetail")
+    public String buscarDetail(@RequestParam("query") String nombre, Model model) {
+        model.addAttribute("listaComidas", mealDao.buscarComidaPorNombreEnDetail(nombre));
+        return "detail/list";
     }
 }
