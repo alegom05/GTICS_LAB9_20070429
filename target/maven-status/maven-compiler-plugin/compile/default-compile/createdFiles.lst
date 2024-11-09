@@ -1,0 +1,10 @@
+com\example\springdogless\entity\MealResponse.class
+com\example\springdogless\controllers\MealController.class
+com\example\springdogless\entity\Meal.class
+com\example\springdogless\dao\MealDao.class
+com\example\springdogless\APIdni\AppConfig.class
+com\example\springdogless\APIdni\DniService.class
+com\example\springdogless\SpringDoglessApplication.class
+com\example\springdogless\APIdni\DniController.class
+com\example\springdogless\APIdni\DniResponse.class
+com\example\springdogless\entity\Zona.class

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <title th:text="Telemeal"></title>
+    </head>
+    <body>
+    <div class="container">
+        <h1 style="text-align: center;">TELEMEAL</h1>
+        <form action="/buscar" method="get" class="d-flex justify-content-center mt-3">
+            <div class="input-group" style="max-width: 400px;">
+                <input type="text" class="form-control" name="query" placeholder="Buscar comida..." required>
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+        </form>
+        <br>
+        <div class="row d-flex flex-wrap">
+            <div th:each="product : ${listaComidas}" class="col-md-4 mb-4 d-flex">
+                <div class="card flex-grow-1">
+                    <div class="card-body">
+                        <h5 class="card-title" text align="center" th:text="${product.strMeal}"></h5>
+                            <a th:href="@{'/detalle' + '?nombre=' + ${product.strMeal}}">
+                                <img th:src="${product.strMealThumb}" class="card-img-top" alt="Imagen de categoría">
+                            </a>
+                        <p class="card-text" th:text="${product.strCategory}"></p>
+                        <!-- No es necesario
+                        <a class="btn btn-primary" th:href="@{'/meal/edit' + '?id=' + ${product.idCategory}}">Editar</a>
+                        <a class="btn btn-danger" th:href="@{'/meal/delete' + '?id=' + ${product.idCategory}}">Borrar</a>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a9a2447b-2cac-4d44-bd31-a48a8a1fd687" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springdogless/controllers/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springdogless/controllers/MealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springdogless/dao/MealDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springdogless/dao/MealDao.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2oLXYAqzIc0fUr6GuSQjFIlengV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.DockerRemoto.executor": "Run",
+    "Docker.Unnamed.executor": "Run",
+    "Maven.SPRING-DOGLESS [clean,install].executor": "Run",
+    "Maven.SPRING-DOGLESS [clean].executor": "Run",
+    "Maven.SPRING-DOGLESS [compile].executor": "Run",
+    "Maven.SPRING-DOGLESS [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.SpringDoglessApplication.executor": "Run",
+    "git-widget-placeholder": "feature/detailMeal",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/carlo/OneDrive/Documentos/Github2/lab9/GTICS_LAB9_20070429/src/main/resources/templates/detail",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github2\lab9\GTICS_LAB9_20070429\src\main\resources\templates\detail" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github2\lab9\GTICS_LAB9_20070429\src\main\resources\templates\templates\temporal" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github2\lab9\GTICS_LAB9_20070429\src\main\resources\templates\templates\detail" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github2\lab9\GTICS_LAB9_20070429\src\main\resources\meal" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github\dogless\DOGLESS\SPRING-DOGLESS\src\main\resources\static\assets\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github2\lab9\GTICS_LAB9_20070429\src\main\resources\templates" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github2\lab9\GTICS_LAB9_20070429\src\main\resources" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github2\lab9\GTICS_LAB9_20070429\src\main\resources\templates\meal\category" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github\dogless\DOGLESS\SPRING-DOGLESS\src\main\resources\static\assets\js" />
+      <recent name="C:\Users\carlo\OneDrive\Documentos\Github\dogless\DOGLESS\SPRING-DOGLESS\src\main\resources\templates\usuario" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.springdogless.entity" />
+      <recent name="com.example.springdogless.controllers" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn package" />
+      <command value="mvn clean" />
+      <command value="mvn compile" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringDoglessApplication">
+    <configuration name="SpringDoglessApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="SPRING-DOGLESS" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springdogless.SpringDoglessApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DockerRemoto" type="docker-deploy" factoryName="dockerfile" server-name="DockerRemotoAzure">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="doglessv1" />
+          <option name="containerName" value="dogless" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="SPRING_DATASOURCE_PASSWORD" />
+                <option name="value" value="Proy2024_" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="SPRING_DATASOURCE_URL " />
+                <option name="value" value="jdbc:mysql://bd-proyecto.mysql.database.azure.com:3306/dogless" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="SPRING_DATASOURCE_USERNAME " />
+                <option name="value" value="azureadmin" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="localhost" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean install" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Docker.DockerRemoto" />
+      <item itemvalue="Spring Boot.SpringDoglessApplication" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a9a2447b-2cac-4d44-bd31-a48a8a1fd687" name="Changes" comment="" />
+      <created>1730649876869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730649876869</updated>
+      <workItem from="1730649880314" duration="13645000" />
+      <workItem from="1730741690726" duration="1152000" />
+      <workItem from="1730755089504" duration="8111000" />
+      <workItem from="1730771187242" duration="399000" />
+      <workItem from="1730836287061" duration="543000" />
+      <workItem from="1730837646762" duration="227000" />
+      <workItem from="1730933555039" duration="17395000" />
+      <workItem from="1730987689096" duration="9802000" />
+      <workItem from="1731023657668" duration="351000" />
+      <workItem from="1731033107565" duration="7286000" />
+      <workItem from="1731084368537" duration="3084000" />
+      <workItem from="1731092775781" duration="16930000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/detailMeal" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
