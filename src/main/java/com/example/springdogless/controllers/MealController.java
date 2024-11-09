@@ -3,10 +3,12 @@ package com.example.springdogless.controllers;
 import com.example.springdogless.dao.MealDao;
 import com.example.springdogless.entity.Detail;
 import com.example.springdogless.entity.DetailResponse;
+import com.example.springdogless.entity.Meal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
@@ -52,12 +54,28 @@ public class MealController {
 
 
 
-
     @GetMapping("/buscarDetail")
     public String buscarDetail(@RequestParam("query") String nombre, Model model) {
         model.addAttribute("listaComidas", mealDao.buscarComidaPorNombreEnDetail(nombre));
         return "detail/list";
     }
+
+    /*
+    @PostMapping("/add-to-favorites")
+    public String addToFavorites(@RequestParam("mealName") String mealName) {
+        // Fetch the meal from the database using the mealName
+        Detail detail = mealDao.buscarComidaPorNombreEnDetail(mealName);
+
+        // Update the favorite field
+        if (detail != null) {
+            detail.setFavorite(1);
+            mealService.save(meal); // Save the updated meal
+        }
+
+        // Redirect to a relevant page (e.g., details or a list view)
+        return "redirect:/detalle?mealName=" + mealName;
+    }
+    */
 
 
 

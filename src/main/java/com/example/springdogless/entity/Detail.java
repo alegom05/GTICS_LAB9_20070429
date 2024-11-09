@@ -27,6 +27,7 @@ public class Detail {
     private String strIngredient2;
     private String strIngredient3;
     private String strIngredient4;
+    private Integer favorite;
 
 
 

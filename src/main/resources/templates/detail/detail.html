@@ -12,9 +12,17 @@
 <body>
 <div class="container">
     <h1 align="center">TELEMEAL</h1>
-    <div class="input-group text-center" style="max-width: 300px; margin: auto;">
-        <img th:src="${detalle.strMealThumb}" class="card-img-top" alt="Imagen de la comida">
-    </div>
+    <form action="/add-to-favorites" method="post">
+        <form action="/add-to-favorites" method="post">
+            <input type="hidden" name="mealId" th:value="${detalle.idMeal}" />
+            <button type="submit" class="btn btn-success">Añadir a Favoritos</button>
+        </form>
+        <button type="submit" class="btn btn-success">Añadir a Favoritos</button>
+    </form>
+    <form action="/add-to-favorites" method="post">
+        <input type="hidden" name="mealName" th:value="${detalle.strMeal}" />
+        <button type="submit" class="btn btn-success">Añadir a Favoritos</button>
+    </form>
     <h2 th:text="${detalle.strMeal}"></h2>
     <p th:text="'Categoría: ' + ${detalle.strCategory}"></p>
     <p th:text="'Área: ' + ${detalle.strArea}"></p>
@@ -24,7 +32,6 @@
     <p th:text="'Ingrediente 2: ' + ${detalle.strIngredient2}"></p>
     <p th:text="'Ingrediente 3: ' + ${detalle.strIngredient3}"></p>
     <p th:text="'Ingrediente 4: ' + ${detalle.strIngredient4}"></p>
-
 </div>
 </body>
 </html>
