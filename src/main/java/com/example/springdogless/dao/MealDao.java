@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,6 +36,7 @@ public class MealDao {
                 .collect(Collectors.toList());
     }
 
+    //Lista Detail
     public List<Detail> listarDetail() {
         RestTemplate restTemplate = new RestTemplate();
         DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=X", DetailResponse.class);
@@ -43,16 +46,11 @@ public class MealDao {
         return meals;
     }
 
-    public List<Detail> buscarComidaPorNombreEnDetail(String nombre) {
-        RestTemplate restTemplate = new RestTemplate();
-        DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=X", DetailResponse.class);
-        List<Detail> meals = response.getMeals();
 
-        return meals.stream()
-                .filter(meal -> meal.getStrCategory().toLowerCase().contains(nombre.toLowerCase()))
-                .collect(Collectors.toList());
-    }
 
+
+
+    //Detalle en Detail
     public Detail verDetallePorNombre(String nombre) {
         RestTemplate restTemplate = new RestTemplate();
         DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=" + nombre, DetailResponse.class);
@@ -67,6 +65,33 @@ public class MealDao {
         return null;
     }
 
+    //Buscador en Detail
+    public List<Detail> buscarComidaPorNombreEnDetail(String nombre) {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + nombre;
+        DetailResponse response = restTemplate.getForObject(url, DetailResponse.class);
 
+        if (response != null && response.getMeals() != null) {
+            return response.getMeals();
+        }
+
+        return new ArrayList<>();
+    }
+
+    //Busqueda por nombre para favoritos
+    public List<Detail> buscarComidaParaFavoritos(String nombre) {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + nombre;
+        DetailResponse response = restTemplate.getForObject(url, DetailResponse.class);
+
+        if (response != null && response.getMeals() != null) {
+            List<Detail> meals = response.getMeals();
+            return meals.stream()
+                    .filter(meal -> meal.getStrCategory().toLowerCase().contains(nombre.toLowerCase()))
+                    .collect(Collectors.toList());
+        } else {
+            return Collections.emptyList();
+        }
+    }
 
 }

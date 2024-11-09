@@ -26,27 +26,32 @@ public class MealController {
     @Autowired
     ComidaRepository comidaRepository;
 
+    //Lista de meal
     @GetMapping({"/meal", "", "/"})
     public String listaComidas(Model model) {
         model.addAttribute("listaComidas", mealDao.listarComidas());
         return "category/list";
     }
 
+    //Buscador de meal
     @GetMapping("/buscar")
     public String buscarComidas(@RequestParam("query") String nombre, Model model) {
         model.addAttribute("listaComidas", mealDao.buscarComidaPorNombre(nombre));
         return "category/list";
     }
 
+    //Lista de Detail
     @GetMapping({"/detail", "/detail/"})
     public String listaDetail(Model model) {
         model.addAttribute("listaComidas", mealDao.listarDetail());
         return "detail/list";
     }
 
+    //Vista de detalle
     @GetMapping("/detalle")
-    public String listaDetail(@RequestParam("nombre") String nombre, Model model) {
+    public String listaDetail2(@RequestParam("nombre") String nombre, Model model) {
         Detail detalle = mealDao.verDetallePorNombre(nombre);
+
         if (detalle != null) {
             model.addAttribute("detalle", detalle);
             return "detail/detail"; // Asegúrate de tener la vista 'detail/view.html'
@@ -56,21 +61,11 @@ public class MealController {
         }
     }
 
-
-
-    @GetMapping("/buscarDetail")
-    public String buscarDetail(@RequestParam("query") String nombre, Model model) {
-        model.addAttribute("listaComidas", mealDao.buscarComidaPorNombreEnDetail(nombre));
-        return "detail/list";
-    }
-
-
-    @PostMapping("/add-to-favorites")
+    //Añadir a favoritos
+    @PostMapping("/anadirFavoritos")
     public String addToFavorites(@RequestParam("mealName") String mealName) {
-        // Suponiendo que el método devuelve una lista
         List<Detail> detailsList = mealDao.buscarComidaPorNombreEnDetail(mealName);
 
-        // Verifica que la lista no esté vacía antes de acceder a los elementos
         if (detailsList != null && !detailsList.isEmpty()) {
             Detail details = detailsList.get(0);
 
@@ -89,9 +84,12 @@ public class MealController {
             comida.setFavorite(1);
 
             comidaRepository.save(comida);
-        }
+            System.out.println("Comida guardada en la base de datos.");
 
-        return "redirect:/detalle?mealName=" + mealName;
+        }
+        System.out.println("No se encontraron detalles para " + mealName);
+
+        return "redirect:/detalle?nombre=" + mealName;
     }
 
 
