@@ -57,7 +57,7 @@ public class MealDao {
         RestTemplate restTemplate = new RestTemplate();
         DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=" + nombre, DetailResponse.class);
 
-        System.out.println("Respuesta de la API: " + response); // Imprime la respuesta completa
+        System.out.println("Respuesta de la API: " + response);
         if (response != null && response.getMeals() != null && !response.getMeals().isEmpty()) {
             return response.getMeals().stream()
                     .filter(detail -> detail.getStrMeal().equalsIgnoreCase(nombre))

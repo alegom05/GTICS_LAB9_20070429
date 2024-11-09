@@ -59,17 +59,6 @@ public class MealController {
         return "detail/list";
     }
 
-    @GetMapping("/detalle2")
-    public String verDetalle(@RequestParam("nombre") String nombre, Model model) {
-        Detail detalle = mealDao.verDetallePorNombre(nombre);
-        if (detalle != null) {
-            model.addAttribute("detalle", detalle);
-            return "detail/detail"; // Asegúrate de tener la vista 'detail/view.html'
-        } else {
-            model.addAttribute("error", "No se encontraron detalles para el nombre proporcionado.");
-            return "detail/error"; // O una vista de error si prefieres
-        }
-    }
 
 
 }
