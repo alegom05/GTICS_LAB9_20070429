@@ -20,8 +20,14 @@ public class Detail {
     private String strCategory;
 
     private String strArea;
+    private String strTags;
     private String strInstructions;
     private String strMealThumb;
+    private String strIngredient1;
+    private String strIngredient2;
+    private String strIngredient3;
+    private String strIngredient4;
+
 
 
 }

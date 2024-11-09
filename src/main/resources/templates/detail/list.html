@@ -23,7 +23,9 @@
                 <div class="card flex-grow-1">
                     <div class="card-body">
                         <h5 class="card-title" text align="center" th:text="${product.strMeal}"></h5>
-                        <img th:src="${product.strMealThumb}" class="card-img-top" alt="Imagen de categoría">
+                            <a th:href="@{'/detalle' + '?nombre=' + ${product.strMeal}}">
+                                <img th:src="${product.strMealThumb}" class="card-img-top" alt="Imagen de categoría">
+                            </a>
                         <p class="card-text" th:text="${product.strCategory}"></p>
                         <!-- No es necesario
                         <a class="btn btn-primary" th:href="@{'/meal/edit' + '?id=' + ${product.idCategory}}">Editar</a>

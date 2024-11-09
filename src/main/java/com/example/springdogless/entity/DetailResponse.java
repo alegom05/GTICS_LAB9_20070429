@@ -10,5 +10,5 @@ import java.util.List;
 @Setter
 public class DetailResponse {
 
-    private List<Detail> categories;
+    private List<Detail> meals;
 }

@@ -37,7 +37,8 @@ public class MealDao {
     public List<Detail> listarDetail() {
         RestTemplate restTemplate = new RestTemplate();
         DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=X", DetailResponse.class);
-        List<Detail> meals = response.getCategories();
+        List<Detail> meals = response.getMeals();
+        System.out.println("Detalles obtenidos: " + meals); // Imprime los detalles
 
         return meals;
     }
@@ -45,10 +46,27 @@ public class MealDao {
     public List<Detail> buscarComidaPorNombreEnDetail(String nombre) {
         RestTemplate restTemplate = new RestTemplate();
         DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=X", DetailResponse.class);
-        List<Detail> meals = response.getCategories();
+        List<Detail> meals = response.getMeals();
 
         return meals.stream()
                 .filter(meal -> meal.getStrCategory().toLowerCase().contains(nombre.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
+    public Detail verDetallePorNombre(String nombre) {
+        RestTemplate restTemplate = new RestTemplate();
+        DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=" + nombre, DetailResponse.class);
+
+        System.out.println("Respuesta de la API: " + response); // Imprime la respuesta completa
+        if (response != null && response.getMeals() != null && !response.getMeals().isEmpty()) {
+            return response.getMeals().stream()
+                    .filter(detail -> detail.getStrMeal().equalsIgnoreCase(nombre))
+                    .findFirst()
+                    .orElse(null);
+        }
+        return null;
+    }
+
+
+
 }
