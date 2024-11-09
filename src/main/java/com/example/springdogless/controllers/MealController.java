@@ -1,6 +1,8 @@
 package com.example.springdogless.controllers;
 
+import com.example.springdogless.Repository.ComidaRepository;
 import com.example.springdogless.dao.MealDao;
+import com.example.springdogless.entity.Comida;
 import com.example.springdogless.entity.Detail;
 import com.example.springdogless.entity.DetailResponse;
 import com.example.springdogless.entity.Meal;
@@ -21,6 +23,8 @@ public class MealController {
 
     @Autowired
     MealDao mealDao;
+    @Autowired
+    ComidaRepository comidaRepository;
 
     @GetMapping({"/meal", "", "/"})
     public String listaComidas(Model model) {
@@ -60,22 +64,38 @@ public class MealController {
         return "detail/list";
     }
 
-    /*
+
     @PostMapping("/add-to-favorites")
     public String addToFavorites(@RequestParam("mealName") String mealName) {
-        // Fetch the meal from the database using the mealName
-        Detail detail = mealDao.buscarComidaPorNombreEnDetail(mealName);
+        // Suponiendo que el método devuelve una lista
+        List<Detail> detailsList = mealDao.buscarComidaPorNombreEnDetail(mealName);
 
-        // Update the favorite field
-        if (detail != null) {
-            detail.setFavorite(1);
-            mealService.save(meal); // Save the updated meal
+        // Verifica que la lista no esté vacía antes de acceder a los elementos
+        if (detailsList != null && !detailsList.isEmpty()) {
+            Detail details = detailsList.get(0);
+
+            Comida comida = new Comida();
+            comida.setStrMeal(details.getStrMeal());
+            comida.setStrDrinkAlternate(details.getStrDrinkAlternate());
+            comida.setStrCategory(details.getStrCategory());
+            comida.setStrArea(details.getStrArea());
+            comida.setStrTags(details.getStrTags());
+            comida.setStrInstructions(details.getStrInstructions());
+            comida.setStrMealThumb(details.getStrMealThumb());
+            comida.setStrIngredient1(details.getStrIngredient1());
+            comida.setStrIngredient2(details.getStrIngredient2());
+            comida.setStrIngredient3(details.getStrIngredient3());
+            comida.setStrIngredient4(details.getStrIngredient4());
+            comida.setFavorite(1);
+
+            comidaRepository.save(comida);
         }
 
-        // Redirect to a relevant page (e.g., details or a list view)
         return "redirect:/detalle?mealName=" + mealName;
     }
-    */
+
+
+
 
 
 

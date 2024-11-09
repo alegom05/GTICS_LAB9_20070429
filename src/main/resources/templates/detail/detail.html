@@ -12,17 +12,15 @@
 <body>
 <div class="container">
     <h1 align="center">TELEMEAL</h1>
-    <form action="/add-to-favorites" method="post">
-        <form action="/add-to-favorites" method="post">
-            <input type="hidden" name="mealId" th:value="${detalle.idMeal}" />
-            <button type="submit" class="btn btn-success">Añadir a Favoritos</button>
-        </form>
-        <button type="submit" class="btn btn-success">Añadir a Favoritos</button>
-    </form>
+
+    <img th:src="${detalle.strMealThumb}" class="card-img-top" alt="Imagen de categoría">
+
+
     <form action="/add-to-favorites" method="post">
         <input type="hidden" name="mealName" th:value="${detalle.strMeal}" />
         <button type="submit" class="btn btn-success">Añadir a Favoritos</button>
     </form>
+
     <h2 th:text="${detalle.strMeal}"></h2>
     <p th:text="'Categoría: ' + ${detalle.strCategory}"></p>
     <p th:text="'Área: ' + ${detalle.strArea}"></p>
