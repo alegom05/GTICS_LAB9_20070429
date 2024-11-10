@@ -10,7 +10,12 @@
     </head>
     <body>
     <div class="container">
-        <h1 style="text-align: center;">TELEMEAL</h1>
+        <div class="container position-relative">
+            <h1 class="text-center">TELEMEAL</h1>
+            <a th:href="@{'/favorite'}" class="btn btn-success btn-group-lg" style="position: absolute; right: 0;">Lista de favoritos</a>
+        </div>
+
+
         <form action="/buscar" method="get" class="d-flex justify-content-center mt-3">
             <div class="input-group" style="max-width: 400px;">
                 <input type="text" class="form-control" name="query" placeholder="Buscar comida..." required>

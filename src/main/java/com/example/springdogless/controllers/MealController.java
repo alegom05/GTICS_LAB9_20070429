@@ -92,7 +92,11 @@ public class MealController {
         return "redirect:/detalle?nombre=" + mealName;
     }
 
-
+    @GetMapping({"/favorite", "/favorite/"})
+    public String listaFavorite(Model model) {
+        model.addAttribute("listaComidas", comidaRepository.findAll());
+        return "favorite/list";
+    }
 
 
 
