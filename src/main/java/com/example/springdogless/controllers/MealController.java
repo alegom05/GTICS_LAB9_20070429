@@ -49,7 +49,7 @@ public class MealController {
 
     //Vista de detalle
     @GetMapping("/detalle")
-    public String listaDetail2(@RequestParam("nombre") String nombre, Model model) {
+    public String DetalleDetail(@RequestParam("nombre") String nombre, Model model) {
         Detail detalle = mealDao.verDetallePorNombre(nombre);
 
         if (detalle != null) {

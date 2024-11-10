@@ -18,7 +18,12 @@
     <br>
     <form action="/anadirFavoritos" method="post" style="text-align: center;" onsubmit="showSuccessModal(event)">
         <input type="hidden" name="mealName" th:value="${detalle.strMeal}" />
-        <button id="favButton" type="submit" class="btn btn-success">Añadir a Favoritos</button>
+        <button id="favButton" type="submit"
+                th:text="${detalle.favorite == 1} ? 'Favorito' : 'Añadir a Favoritos'"
+                th:classappend="${detalle.favorite == 1} ? 'btn-secondary' : 'btn-success'"
+                class="btn">
+            Añadir a Favoritos
+        </button>
     </form>
 
     <h2 th:text="${detalle.strMeal}"></h2>
@@ -32,7 +37,6 @@
     <p th:text="'Ingrediente 4: ' + ${detalle.strIngredient4}"></p>
 </div>
 
-<!-- Modal de éxito -->
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -53,16 +57,25 @@
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (localStorage.getItem('isFavorite') === 'true') {
+            $('#favButton').text('Favorito');
+            $('#favButton').removeClass('btn-success').addClass('btn-secondary');
+        }
+    });
+
     function showSuccessModal(event) {
         event.preventDefault();
         $('#favButton').text('Favorito');
         $('#favButton').removeClass('btn-success').addClass('btn-secondary');
+        localStorage.setItem('isFavorite', 'true');
         $('#successModal').modal('show');
 
         setTimeout(() => {
             event.target.submit();
         }, 2000);
     }
+
 </script>
 </body>
 </html>
