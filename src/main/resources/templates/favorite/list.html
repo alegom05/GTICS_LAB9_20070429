@@ -10,13 +10,30 @@
     </head>
     <body>
     <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/detail">Comidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/favorite">Favoritos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <h1 style="text-align: center;">TELEMEAL</h1>
+        <!--
         <form action="/buscar" method="get" class="d-flex justify-content-center mt-3">
             <div class="input-group" style="max-width: 400px;">
                 <input type="text" class="form-control" name="query" placeholder="Buscar comida..." required>
                 <button class="btn btn-primary" type="submit">Buscar</button>
             </div>
         </form>
+        -->
         <br>
         <div class="row d-flex flex-wrap">
             <div th:each="product : ${listaComidas}" class="col-md-4 mb-4 d-flex">
@@ -27,10 +44,6 @@
                                 <img th:src="${product.strMealThumb}" class="card-img-top" alt="Imagen de categoría">
                             </a>
                         <p class="card-text" th:text="${product.strCategory}"></p>
-                        <!-- No es necesario
-                        <a class="btn btn-primary" th:href="@{'/meal/edit' + '?id=' + ${product.idCategory}}">Editar</a>
-                        <a class="btn btn-danger" th:href="@{'/meal/delete' + '?id=' + ${product.idCategory}}">Borrar</a>
-                        -->
                     </div>
                 </div>
             </div>

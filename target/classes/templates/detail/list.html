@@ -10,18 +10,35 @@
     </head>
     <body>
     <div class="container">
-        <div class="container position-relative">
-            <h1 class="text-center">TELEMEAL</h1>
-            <a th:href="@{'/favorite'}" class="btn btn-success btn-group-lg" style="position: absolute; right: 0;">Lista de favoritos</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/detail">Comidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/favorite">Favoritos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1 align="center">TELEMEAL</h1>
+
+        <div class="d-flex justify-content-end mb-3">
+            <a th:href="@{'/favorite'}" class="btn btn-success btn-group-lg">Lista de favoritos</a>
         </div>
 
-
-        <form action="/buscar" method="get" class="d-flex justify-content-center mt-3">
-            <div class="input-group" style="max-width: 400px;">
-                <input type="text" class="form-control" name="query" placeholder="Buscar comida..." required>
-                <button class="btn btn-primary" type="submit">Buscar</button>
-            </div>
-        </form>
+        <div class="mb-4">
+            <form th:action="@{/buscarDetail}" method="get" class="input-group">
+                <input type="text" name="nombre" placeholder="Search for a meal" class="form-control" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
         <br>
         <div class="row d-flex flex-wrap">
             <div th:each="product : ${listaComidas}" class="col-md-4 mb-4 d-flex">

@@ -12,6 +12,7 @@ public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCategory;
+    private String strMeal;
     private String strCategory;
     private String strCategoryThumb;
     private String strCategoryDescription;

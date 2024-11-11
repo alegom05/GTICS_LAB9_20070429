@@ -2,11 +2,13 @@ package com.example.springdogless.controllers;
 
 import com.example.springdogless.Repository.ComidaRepository;
 import com.example.springdogless.dao.MealDao;
+import com.example.springdogless.dto.MealDTO;
 import com.example.springdogless.entity.Comida;
 import com.example.springdogless.entity.Detail;
 import com.example.springdogless.entity.DetailResponse;
 import com.example.springdogless.entity.Meal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -33,10 +36,17 @@ public class MealController {
         return "category/list";
     }
 
-    //Buscador de meal
-    @GetMapping("/buscar")
-    public String buscarComidas(@RequestParam("query") String nombre, Model model) {
-        model.addAttribute("listaComidas", mealDao.buscarComidaPorNombre(nombre));
+    //Buscador de categorias
+    @GetMapping("/buscarCategoria")
+    public String buscarCategoria(@RequestParam("nombre") String nombre, Model model) {
+        List<Meal> comidas = mealDao.buscadorCategoria(nombre);
+
+        if (!comidas.isEmpty()) {
+            model.addAttribute("listaComidas", comidas);
+        } else {
+            model.addAttribute("mensaje", "No se encontraron resultados para la categoría buscada.");
+        }
+
         return "category/list";
     }
 
@@ -47,6 +57,20 @@ public class MealController {
         return "detail/list";
     }
 
+    //Buscador de meal
+    @GetMapping("/buscarDetail")
+    public String buscarDetail(@RequestParam("nombre") String nombre, Model model) {
+        List<Detail> comidas = mealDao.buscadorDetail(nombre);
+
+        if (!comidas.isEmpty()) {
+            model.addAttribute("listaComidas", comidas);
+        } else {
+            model.addAttribute("mensaje", "No se encontraron resultados para la categoría buscada.");
+        }
+
+        return "detail/list";
+    }
+
     //Vista de detalle
     @GetMapping("/detalle")
     public String DetalleDetail(@RequestParam("nombre") String nombre, Model model) {
@@ -54,10 +78,10 @@ public class MealController {
 
         if (detalle != null) {
             model.addAttribute("detalle", detalle);
-            return "detail/detail"; // Asegúrate de tener la vista 'detail/view.html'
+            return "detail/detail";
         } else {
             model.addAttribute("error", "No se encontraron detalles para el nombre proporcionado.");
-            return "detail/error"; // O una vista de error si prefieres
+            return "detail/error";
         }
     }
 
@@ -97,8 +121,6 @@ public class MealController {
         model.addAttribute("listaComidas", comidaRepository.findAll());
         return "favorite/list";
     }
-
-
 
 
 }

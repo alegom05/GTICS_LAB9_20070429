@@ -5,17 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9a2447b-2cac-4d44-bd31-a48a8a1fd687" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/favorite/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c0022311-2589-495e-bee9-094376f7f851.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c0022311-2589-495e-bee9-094376f7f851.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springdogless/dto/MealDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springdogless/controllers/MealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springdogless/controllers/MealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springdogless/dao/MealDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springdogless/dao/MealDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springdogless/entity/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springdogless/entity/Meal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/category/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detail/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detail/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detail/form.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detail/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detail/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/favorite/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/favorite/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/favorite/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springdogless/controllers/MealController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springdogless/controllers/MealController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springdogless/dao/MealDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springdogless/dao/MealDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springdogless/entity/Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springdogless/entity/Detail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springdogless/entity/Meal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springdogless/entity/Meal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/category/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/detail/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/detail/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/detail/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/detail/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/detail/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

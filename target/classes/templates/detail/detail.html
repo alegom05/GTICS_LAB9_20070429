@@ -11,13 +11,15 @@
 </head>
 <body>
 <div class="container">
+
     <h1 align="center">TELEMEAL</h1>
 
     <img th:src="${detalle.strMealThumb}" class="card-img-top" alt="Imagen de categoría" style="display: block; margin: auto; width: 300px; height: auto;">
 
     <br>
-    <form action="/anadirFavoritos" method="post" style="text-align: center;" onsubmit="showSuccessModal(event)">
+    <form id="favForm" action="/anadirFavoritos" method="post" style="text-align: center;" onsubmit="showSuccessModal(event)">
         <input type="hidden" name="mealName" th:value="${detalle.strMeal}" />
+        <input type="hidden" id="favoritoInput" name="favorito" th:value="${detalle.favorite}"/>
         <button id="favButton" type="submit"
                 th:text="${detalle.favorite == 1} ? 'Favorito' : 'Añadir a Favoritos'"
                 th:classappend="${detalle.favorite == 1} ? 'btn-secondary' : 'btn-success'"
@@ -58,24 +60,24 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        if (localStorage.getItem('isFavorite') === 'true') {
+        if (parseInt("[[${detalle.favorite}]]") === 1) {
             $('#favButton').text('Favorito');
             $('#favButton').removeClass('btn-success').addClass('btn-secondary');
+            $('#favoritoInput').val(1);
         }
     });
 
     function showSuccessModal(event) {
         event.preventDefault();
+        $('#successModal').modal('show');
         $('#favButton').text('Favorito');
         $('#favButton').removeClass('btn-success').addClass('btn-secondary');
-        localStorage.setItem('isFavorite', 'true');
-        $('#successModal').modal('show');
+        $('#favoritoInput').val(1);
 
         setTimeout(() => {
             event.target.submit();
         }, 2000);
     }
-
 </script>
 </body>
 </html>

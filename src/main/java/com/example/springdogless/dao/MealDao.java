@@ -4,13 +4,10 @@ import com.example.springdogless.entity.Detail;
 import com.example.springdogless.entity.DetailResponse;
 import com.example.springdogless.entity.Meal;
 import com.example.springdogless.entity.MealResponse;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,6 +15,7 @@ import java.util.stream.Collectors;
 @Component
 public class MealDao {
 
+    //Lista Categories
     public List<Meal> listarComidas() {
         RestTemplate restTemplate = new RestTemplate();
         MealResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/categories.php", MealResponse.class);
@@ -26,9 +24,26 @@ public class MealDao {
         return meals;
     }
 
+
+    public List<Meal> buscadorCategoria(String nombre) {
+        RestTemplate restTemplate = new RestTemplate();
+        MealResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/categories.php", MealResponse.class);
+
+        if (response != null && response.getCategories() != null) {
+            List<Meal> meals = response.getCategories();
+            return meals.stream()
+                    .filter(meal -> meal.getStrCategory().equalsIgnoreCase(nombre))
+                    .collect(Collectors.toList());
+        }
+
+        return new ArrayList<>();
+    }
+
+
+    //Buscador de Meals
     public List<Meal> buscarComidaPorNombre(String nombre) {
         RestTemplate restTemplate = new RestTemplate();
-        MealResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=X", MealResponse.class);
+        MealResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=" + nombre, MealResponse.class);
         List<Meal> meals = response.getCategories();
 
         return meals.stream()
@@ -46,8 +61,20 @@ public class MealDao {
         return meals;
     }
 
+    // Buscador en Detail
+    public List<Detail> buscadorDetail(String nombre) {
+        RestTemplate restTemplate = new RestTemplate();
+        DetailResponse response = restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=" + nombre, DetailResponse.class);
 
+        if (response != null && response.getMeals() != null) {
+            List<Detail> meals = response.getMeals();
+            return meals.stream()
+                    .filter(meal -> meal.getStrMeal().equalsIgnoreCase(nombre))
+                    .collect(Collectors.toList());
+        }
 
+        return new ArrayList<>();
+    }
 
 
     //Detalle en Detail
